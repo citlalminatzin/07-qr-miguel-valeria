@@ -94,6 +94,7 @@ def gram_schmidt(V: list[list[float]]) -> list[list[float]]:
  
     return U
 
+gm= gram_schmidt  # Alias para facilitar la importación desde qr.py
 
 def matrix_to_str(matrix: list[list[float]]) -> str:
     """Convierte una matriz a texto formateado con columnas alineadas."""
