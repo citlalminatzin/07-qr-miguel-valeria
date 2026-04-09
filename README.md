@@ -1,11 +1,10 @@
 # Factorización QR
 
-¡Adentrémonos en el increíble mundo del álgebra lineal numérica! OwO
 
 ## Integrantes
 
-- Juro por Amogasiddhi que si no me escriben los integrantes de su equipo empezando por apellido y ordenados de forma alfabética, lloro
-
+- Domínguez León José Miguel 
+- Lazcano Flores Valeria
 ## Objetivos
 
 1. Programar factorización QR en Python puro
@@ -170,5 +169,13 @@ y_{m-1}
 \end{bmatrix}
 $$
 > **Entregable 5.** Completa el código en `main.py`
+
+## Grafica para el entregrable 6
+![Interpolación polinomial de sin(x)](media/interpolacion.png)
+## Gif
+
+![GIF interpolación](media/interpolacion.gif)
+
+
 
 > **Entregable 6.** Añade una gráfica de la interpolación de un polinomio a $\sin(x)$ en el intervalo $[0,2\pi]$ con $100$ puntos. Recibe 2 puntos extras adicionales en la práctica de tu elección si eres capaz de generar un gif que muestre como la interpolación pasa de $2$ puntos a $100$. Para ello puedes consultar este [link](https://matplotlib.org/stable/users/explain/animations/animations.html)
