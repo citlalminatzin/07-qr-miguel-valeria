@@ -174,7 +174,9 @@ $$
 
 ## Grafica para el entregrable 6
 ![Interpolación polinomial de sin(x)](media/interpolacion.png)
+## Gif
 
+![GIF interpolación](media/interpolacion.gif)
 
 
 
