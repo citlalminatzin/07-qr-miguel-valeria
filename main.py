@@ -3,12 +3,13 @@
 import collections
 import numbers
 
-from math import pi
+from math import pi, sin
+from collections.abc import Sequence 
 
 from linear_solver import solve
 
 # linspace obtenido de (https://code.activestate.com/recipes/579000/)
-class linspace(collections.abc.Sequence):
+class linspace(Sequence):
     """linspace(start, stop, num) -> linspace object
     
     Return a virtual sequence of num numbers from start to stop (inclusive).
@@ -66,12 +67,37 @@ def interpolate_sine(n:int)->list[float]:
     """Recibe la cantidad de puntos a interpolar la función seno"""
     lim_inf:float = 0
     lim_sup:float = 2 * pi
+    
+    #generar los puntos
     points = linspace(lim_inf, lim_sup, n)
-    ...
+    
+    #evaluar seno en esos puntos
+    valores = [sin(x) for x in points]
+    
+    return interpolate(list(points), valores)
+    
 
 
-def main():
-    ...
 
 if __name__ == "__main__":
-    main()
+# Puntos de entrada
+    x = [0, 1, 2]
+
+    V = vandermonde_matrix(x)
+
+    print("Matriz de Vandermonde:")
+    for fila in V:
+        print(fila)
+        
+    puntos = [0, 1, 2]
+    valores = [1, 4, 9]
+    coef = interpolate(puntos, valores)
+    coef_redondeado = [round(c, 6) for c in coef] #redondeamos los valores 
+    print("Coeficientes del polinomio:")
+    print(coef_redondeado)
+    
+    coeficientes = interpolate_sine(5)
+    print("Coeficientes del polinomio interpolante del seno:")
+    print(coeficientes)
+    
+    
