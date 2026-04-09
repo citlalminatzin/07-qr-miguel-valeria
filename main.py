@@ -5,7 +5,7 @@ import numbers
 
 from math import pi, sin
 from collections.abc import Sequence 
-
+import matplotlib.pyplot as plt
 from linear_solver import solve
 
 # linspace obtenido de (https://code.activestate.com/recipes/579000/)
@@ -77,6 +77,50 @@ def interpolate_sine(n:int)->list[float]:
     return interpolate(list(points), valores)
     
 
+def evaluar_polinomio(coef: list[float], x: float) -> float:
+    """Evalúa el polinomio con coeficientes `coef` en el punto x."""
+    return sum(c * x**j for j, c in enumerate(coef))
+
+
+
+def graficar_interpolacion(n: int = 100):
+    """
+    Grafica la interpolación polinomial del seno con n puntos
+    junto a la función seno real.
+    """
+    # Calcular coeficientes del polinomio interpolante
+    coef = interpolate_sine(n)
+ 
+    # Puntos densos para que la curva se vea suave
+    xs = list(linspace(0, 2 * pi, 500))
+ 
+    seno_real = [sin(x) for x in xs]
+    polinomio = [evaluar_polinomio(coef, x) for x in xs]
+ 
+    # Puntos de interpolación (los nodos)
+    puntos_x = list(linspace(0, 2 * pi, n))
+    puntos_y = [sin(x) for x in puntos_x]
+ 
+    fig, ax = plt.subplots(figsize=(10, 5))
+ 
+    ax.plot(xs, seno_real,
+            label='sin(x)', color='steelblue', linewidth=2)
+    ax.plot(xs, polinomio,
+            label=f'Polinomio interpolante ({n} puntos)',
+            color='tomato', linewidth=1.5, linestyle='--')
+    ax.scatter(puntos_x, puntos_y,
+               s=15, color='tomato', zorder=5, label='Nodos de interpolación')
+ 
+    ax.set_title(f'Interpolación polinomial de sin(x) con {n} puntos en [0, 2π]')
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+ 
+    plt.tight_layout()
+    plt.savefig('interpolacion.png', dpi=150)
+    plt.show()
+    print("Gráfica guardada como interpolacion.png")
 
 
 if __name__ == "__main__":
@@ -99,5 +143,9 @@ if __name__ == "__main__":
     coeficientes = interpolate_sine(5)
     print("Coeficientes del polinomio interpolante del seno:")
     print(coeficientes)
+    # Graficar la interpolación del seno
+    graficar_interpolacion(n=100)
+
+
     
     

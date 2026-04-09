@@ -1,8 +1,7 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/y6M6hpgi)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=23298888)
 # Factorización QR
 
-¡Adentrémonos en el increíble mundo del álgebra lineal numérica! OwO
+-Domínguez León José Miguel 
+-Lazcano Flores Valeria
 
 ## Integrantes
 
@@ -172,5 +171,10 @@ y_{m-1}
 \end{bmatrix}
 $$
 > **Entregable 5.** Completa el código en `main.py`
+
+## Grafica para el entregrable 6
+
+
+
 
 > **Entregable 6.** Añade una gráfica de la interpolación de un polinomio a $\sin(x)$ en el intervalo $[0,2\pi]$ con $100$ puntos. Recibe 2 puntos extras adicionales en la práctica de tu elección si eres capaz de generar un gif que muestre como la interpolación pasa de $2$ puntos a $100$. Para ello puedes consultar este [link](https://matplotlib.org/stable/users/explain/animations/animations.html)
