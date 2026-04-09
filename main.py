@@ -48,13 +48,16 @@ class linspace(collections.abc.Sequence):
 
 def vandermonde_matrix(x: list[float])->list[list[float]]:
     """Genera una matriz de Vandermonde"""
-
+    n = len(x)
+    return[[xi**j for j in range(n)] for xi in x]
+    
 def interpolate(points: list[float], values: list[float]) -> list[float]:
     """
     Interpola un polinomio a los puntos
 
     Devuelve los coeficientes del polinomio
     """
+    
     M = vandermonde_matrix(points)
     return solve(M, values)
 
