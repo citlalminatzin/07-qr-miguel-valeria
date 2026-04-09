@@ -173,6 +173,7 @@ $$
 > **Entregable 5.** Completa el código en `main.py`
 
 ## Grafica para el entregrable 6
+![Interpolación polinomial de sin(x)](media/interpolacion.png)
 
 
 
